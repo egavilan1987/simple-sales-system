@@ -9,8 +9,8 @@
   <a href="salesReport.php"> Sales Report</a>&nbsp; 
   <a href="addClients.php">Add Clients</a>&nbsp; 
   <a href="clientsReport.php">Clients Report</a>&nbsp; 
-  <a href="addProducts">Add Producs</a>&nbsp; 
-  <a href="productsReport">Products Report</a>
+  <a href="addProducts.php">Add Producs</a>&nbsp; 
+  <a href="productsReport.php">Products Report</a>
 </ul>
 
 </body>
