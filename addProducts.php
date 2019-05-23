@@ -20,12 +20,12 @@
 		</tr>
 		<tr >
 			<td align='right'>Name:</td>
-			<td><input type='text' name='name' required maxlength="50">
+			<td><input type='text' name='name' maxlength="50" required >
 			</td>
 		</tr>
 		<tr>
 			<td align='right'>Description:</td>
-			<td><input type='text' name='description' required maxlength="500">
+			<td><input type='text' name='description' maxlength="500" required >
 			</td>
 		</tr>
 		<tr>
@@ -35,7 +35,7 @@
 		</tr>
 		<tr>
 			<td align='right'>Price: </td>
-			<td><input type='number' name='price' min = 0 required step=".01">
+			<td><input type='number' name='price' min = 0 step=".01" required >
 			</td>
 		</tr>
 		<tr>
