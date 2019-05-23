@@ -63,7 +63,7 @@ if(isset($_POST['submit']))
 	 $quantity = $_POST['quantity'];
 	 $price = $_POST['price'];
      
-$sql = "INSERT INTO products(name, description, quantity, price,created_date) VALUES('$name', '$description','$quantity','$price',NOW())";
+$sql = "INSERT INTO products(name, description, quantity, price,created_date) VALUES('$name', '$description','$quantity','$price', NOW())";
 
 $query=mysqli_query($conn,$sql);
 
