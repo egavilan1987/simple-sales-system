@@ -1,31 +1,31 @@
-create database ventas;
+CREATE DATABASE sales;
 
-use ventas2;
+USE sales;
 
-create table productos(
-				id_producto int auto_increment,
-				nombre varchar(50),
-				descripcion varchar(500),
-				cantidad int,
-				precio float,
-				primary key(id_producto)
+CREATE TABLE products(
+	id_product AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	description VARCHAR(500) NOT NULL,
+	quantity INT NOT NULL,
+	price FLOAT NOT NULL,
+	PRIMARY KEY(id_product)
+);
 
-						);
+CREATE TABLE clients(
+	id_client INT AUTO_INCREMENT,
+	name VARCHAR(200) NOT NULL,
+	address VARCHAR(200) NOT NULL,
+	email VARCHAR(200) NOT NULL,
+	telephone VARCHAR(200) NOT NULL,
+	PRIMARY KEY (id_client)
+);
 
-create table clientes(
-				id_cliente int auto_increment,
-				nombre varchar(200),
-				direccion varchar(200),
-				email varchar(200),
-				telefono varchar(200),
-				primary key(id_cliente)
-					);
+CREATE TABLE sales(
+	id_sale AUTO_INCREMENT,
+	id_client INT NOT NULL,
+	id_product INT NOT NULL,
+	quantity INT NOT NULL,
+	total FLOAT NOT NULL,
+	PRIMARY KEY(id_sale)
+);
 
-create table ventas(
-				id_venta int not null auto_increment,
-				id_cliente int,
-				id_producto int,
-				cantidad int,
-				total float,
-				primary key(id_venta)
-					);
