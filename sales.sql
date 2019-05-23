@@ -3,7 +3,7 @@ CREATE DATABASE sales;
 USE sales;
 
 CREATE TABLE products(
-	id_product AUTO_INCREMENT,
+	id_product INT AUTO_INCREMENT,
 	name VARCHAR(50) NOT NULL,
 	description VARCHAR(500) NOT NULL,
 	quantity INT NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE clients(
 );
 
 CREATE TABLE sales(
-	id_sale AUTO_INCREMENT,
+	id_sale INT AUTO_INCREMENT,
 	id_client INT NOT NULL,
 	id_product INT NOT NULL,
 	quantity INT NOT NULL,
