@@ -72,36 +72,47 @@
 
 </html>
 <?php
-$conn = mysqli_connect("localhost","root","","ventas2");
+$conn = mysqli_connect("localhost","root","","sales");
 if(!$conn){
 	die("Connection failed: ".mysql_connect_error());
 }
 if(isset($_POST['submit']))
 {
-	 $id_cliente = $_POST['cliente'];
-	 $id_producto = $_POST['producto'];
+	 $id_client = $_POST['client'];
+	 $id_product = $_POST['product'];
 	 $precio = 10;
-	 $cantidad = $_POST['cantidad'];	 
-$sql2 = "SELECT nombre FROM clientes WHERE id_cliente = '$id_cliente'";
+	 $quantity = $_POST['quantity'];	 
+     
+$sql2 = "SELECT name FROM clients WHERE id_client = '$id_client'";
+
 $result = mysqli_query($conn, $sql2);
+
 $row2 = mysqli_fetch_row($result);
-$cliente_nombre = $row2[0];
-$sql3 = "SELECT nombre, precio, cantidad FROM productos WHERE id_producto = '$id_producto'";
+
+$client_name = $row2[0];
+
+$sql3 = "SELECT name, price, quantity FROM products WHERE id_product = '$id_product'";
+
 $result2 = mysqli_query($conn, $sql3);
+
 $row3 = mysqli_fetch_row($result2);
-$producto_nombre = $row3[0];
-$producto_precio = $row3[1];
-$producto_cantidad = $row3[2];
-$producto_almacen = $producto_cantidad - $cantidad;
-$total = $producto_precio * $cantidad;
-	if ($producto_cantidad < $cantidad){
-		echo "La cantidad del producto en el almacen es menor que la registrada en la venta.";
+
+$product_name = $row3[0];
+$product_price = $row3[1];
+$product_quantity = $row3[2];
+
+$stock = $product_quantity - $quantity;
+
+$total = $product_price * $quantity;
+	if ($product_quantity < $quantity){
+		echo "The quantity of the product in the stock is less than that registered in the sale.";
 	}else {
-		//Insertar nueva venta.
-		$sql = "INSERT INTO ventas(id_cliente, id_producto, cantidad, total) VALUES('$id_cliente', '$id_producto','$cantidad','$total')";
+		//Insert new sale.
+		$sql = "INSERT INTO sales(id_client, id_product, quantity, total) VALUES('$id_client', '$id_product','$quantity','$total')";
 		$query=mysqli_query($conn,$sql);
 		//Actualizar cantidad de productos.
 		$sql1 = "UPDATE productos set cantidad = '$producto_almacen' WHERE id_producto = '$id_producto'";
+        
 		$query1=mysqli_query($conn,$sql1);
 		if($query){
 				echo "<center><b>Nueva Venta Registrada:</b></center><br>";
@@ -109,17 +120,17 @@ $total = $producto_precio * $cantidad;
 				"<table align='center' border='4'>
 					</tr>
 					<tr bgcolor='gray' align='center'>
-						<th>Cliente</th>
-						<th>Producto</th>
-						<th>Precio</th>
-						<th>Cantidad</th>
+						<th>Client</th>
+						<th>Product</th>
+						<th>Price</th>
+						<th>Quantity</th>
 						<th>Total</th>
 					</tr>
 					<tr>
-						<td>$cliente_nombre</td>
-						<td>$producto_nombre</td>
-						<td>$producto_precio</td>
-						<td>$cantidad</td>
+						<td>$client_name</td>
+						<td>$product_name</td>
+						<td>$producto_price</td>
+						<td>$quantity</td>
 						<td>$total</td>
 					</tr>
 				</table>";
