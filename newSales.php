@@ -20,7 +20,7 @@
   <a href="productsManagement.php">Products Management</a>
 </ul>
 
-<form method='post' action='ventas.php'>
+<form method='post' action='newSales.php'>
 <table width='500' border='3' align='center'>
       	<tr>
 			<th bgcolor='gray' colspan='5'>Sales Registration Form</h>
@@ -63,7 +63,7 @@
 		</tr>
 		<tr>
 			<td align='center' colspan='6'>
-			<input type='submit' name='submit' value='Registrar'>
+			<input type='submit' name='submit' value='Submit'>
 			</td>
 		</tr>  
   </table>  
@@ -108,10 +108,10 @@ $total = $product_price * $quantity;
 		echo "The quantity of the product in the stock is less than that registered in the sale.";
 	}else {
 		//Insert new sale.
-		$sql = "INSERT INTO sales(id_client, id_product, quantity, total) VALUES('$id_client', '$id_product','$quantity','$total')";
+		$sql = "INSERT INTO sales(id_client, id_product, quantity, total, created_date) VALUES('$id_client', '$id_product','$quantity','$total',NOW())";
 		$query=mysqli_query($conn,$sql);
 		//Actualizar cantidad de productos.
-		$sql1 = "UPDATE productos set cantidad = '$producto_almacen' WHERE id_producto = '$id_producto'";
+		$sql1 = "UPDATE products set quantity = '$stock' WHERE id_product = '$id_product'";
         
 		$query1=mysqli_query($conn,$sql1);
 		if($query){
@@ -129,7 +129,7 @@ $total = $product_price * $quantity;
 					<tr>
 						<td>$client_name</td>
 						<td>$product_name</td>
-						<td>$producto_price</td>
+						<td>$product_price</td>
 						<td>$quantity</td>
 						<td>$total</td>
 					</tr>

@@ -13,7 +13,7 @@
 	  <a href="productsManagement.php">Products Management</a>
 	</ul>
 
-	<form method='post' action='productsRegistration.php'>
+	<form method='post' action='addProducts.php'>
 	<table width='500' border='3' align='center'>
 		<tr>
 			<th bgcolor='silver' colspan='5'>Products Registration Form</h>
@@ -63,7 +63,7 @@ if(isset($_POST['submit']))
 	 $quantity = $_POST['quantity'];
 	 $price = $_POST['price'];
      
-$sql = "INSERT INTO products(name, description, quantity, price,created_date) VALUES('$name', '$description','$quantity','$price', NOW())";
+$sql = "INSERT INTO products(name, description, quantity, price, created_date) VALUES('$name', '$description','$quantity','$price', NOW())";
 
 $query=mysqli_query($conn,$sql);
 

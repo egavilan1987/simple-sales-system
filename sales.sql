@@ -23,7 +23,7 @@ CREATE TABLE clients(
 );
 
 CREATE TABLE sales(
-	id_sale(11) INT AUTO_INCREMENT,
+	id_sale INT(11) AUTO_INCREMENT,
 	id_client INT NOT NULL,
 	id_product INT NOT NULL,
 	quantity INT NOT NULL,

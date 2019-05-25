@@ -14,7 +14,7 @@
   <a href="productsManagement.php">Products Management</a>
 </ul>
 
-	<form method='post' action='productsRegistration.php'>
+	<form method='post' action='addClients.php'>
 	<table width='500' border='3' align='center'>
 		<tr>
 			<th bgcolor='silver' colspan='5'>Clients Registration Form</h>
@@ -59,12 +59,14 @@ if(!$conn){
 if(isset($_POST['submit']))
 {
 	 $name = $_POST['name'];
-	 $address = $_POST['address '];
+	 $address = $_POST['address'];
 	 $email = $_POST['email'];
 	 $telephone = $_POST['telephone'];
      
-$sql = "INSERT INTO products(name, address, email, telephone, created_date) VALUES('$name', '$address','$email','$telephone', NOW())";
+$sql = "INSERT INTO clients(name, address, email, telephone, created_date) VALUES('$name', '$address','$email','$telephone', NOW())";
+
 $query=mysqli_query($conn,$sql);
+
 if($query){
 		echo "<center><b>New Client Details:</b></center><br>";
 		echo 
