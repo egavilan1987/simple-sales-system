@@ -1,3 +1,4 @@
+    
 <!DOCTYPE html>
 <html>
 <body>
@@ -15,7 +16,7 @@
 		<table align='center' width='1000' border='3'>
 			<tr>
 			<td colspan='20' align='center' bgcolor='silver'>
-			Products Management</td>
+			Clients Management</td>
 			</tr>
 
 			<tr align='center'>
@@ -23,6 +24,8 @@
 				<th>Name</th>
 				<th>Email</th>
 				<th>Telephone</th>
+                <th>Update</th>
+				<th>Details</th>
 			</tr>
 			
 		<?php
@@ -40,6 +43,8 @@
 			<td><?php echo $row['name']; ?>d</td>
 			<td><?php echo $row['email']; ?>d</td>
 			<td><?php echo $row['telephone']; ?>d</td>
+            <td><a href="updateProduct.php?update=<?php echo $row['u_id']; ?>">Update</a></td>
+			<td><a href="viewProduct.php?details=<?php echo $row['u_id']; ?>">Details</a></td
 			</tr>
 		<?php } ?>
 		</table>
