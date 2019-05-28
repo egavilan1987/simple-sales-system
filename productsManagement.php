@@ -24,6 +24,8 @@
 				<th>Name</th>
 				<th>Quantity</th>
 				<th>Price</th>
+                <th>Update</th>
+				<th>Details</th>
 			</tr>
 			
 		<?php
@@ -33,7 +35,6 @@
 		}
 		$sql = "SELECT * FROM products";
 		$query = mysqli_query($conn,$sql) or die("Bad Query: $sql");
-
 		while ($row=mysqli_fetch_assoc($query))
 			{		
 			?>
@@ -42,6 +43,8 @@
 			<td><?php echo $row['name']; ?>d</td>
 			<td><?php echo $row['quantity']; ?>d</td>
 			<td><?php echo $row['price']; ?>d</td>
+            <td><a href="updateProduct.php?update=<?php echo $row['u_id']; ?>">Update</a></td>
+			<td><a href="viewProduct.php?details=<?php echo $row['u_id']; ?>">Details</a></td>
 			</tr>
 		<?php } ?>
 		</table>
