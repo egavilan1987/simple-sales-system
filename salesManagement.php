@@ -26,6 +26,9 @@
 				<th>Price</th>
 				<th>Quantity</th>
 				<th>Total</th>
+                <th>Update</th>
+				<th>Details</th>
+                <th>Delete</th>
 			</tr>
 			
 		<?php
@@ -70,6 +73,9 @@
 			<td><?php echo $row3[1]; ?></td>
 			<td><?php echo $row['quantity']; ?></td>
 			<td><?php echo $row['total']; ?></td>
+            <td><a href="updateProduct.php?update=<?php echo $row['u_id']; ?>">Update</a></td>
+			<td><a href="viewProduct.php?details=<?php echo $row['u_id']; ?>">Details</a></td>
+            <td><a href="viewProduct.php?delete=<?php echo $row['u_id']; ?>">Delete</a></td>
 			</tr>
 		<?php } ?>
 		</table>
