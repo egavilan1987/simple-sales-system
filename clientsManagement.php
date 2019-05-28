@@ -1,4 +1,3 @@
-    
 <!DOCTYPE html>
 <html>
 <body>
@@ -43,8 +42,8 @@
 			<td><?php echo $row['name']; ?>d</td>
 			<td><?php echo $row['email']; ?>d</td>
 			<td><?php echo $row['telephone']; ?>d</td>
-            <td><a href="updateProduct.php?update=<?php echo $row['u_id']; ?>">Update</a></td>
-			<td><a href="viewProduct.php?details=<?php echo $row['u_id']; ?>">Details</a></td
+            <td><a href="updateClient.php?id_client=<?php echo $row['id_client']; ?>">Update</a></td>
+			<td><a href="viewClient.php?id_client=<?php echo $row['id_client']; ?>">Details</a></td
 			</tr>
 		<?php } ?>
 		</table>
