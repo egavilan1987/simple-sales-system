@@ -23,8 +23,7 @@
 				<th>Name</th>
 				<th>Email</th>
 				<th>Telephone</th>
-                <th>Update</th>
-				<th>Details</th>
+                <th colspan='2'>Action</th>
 			</tr>
 			
 		<?php
@@ -42,8 +41,8 @@
 			<td><?php echo $row['name']; ?>d</td>
 			<td><?php echo $row['email']; ?>d</td>
 			<td><?php echo $row['telephone']; ?>d</td>
-            <td><a href="updateClient.php?id_client=<?php echo $row['id_client']; ?>">Update</a></td>
-			<td><a href="viewClient.php?id_client=<?php echo $row['id_client']; ?>">Details</a></td
+			<td><a href="viewClient.php?id_client=<?php echo $row['id_client']; ?>">View</a></td>
+            <td><a href="updateClient.php?id_client=<?php echo $row['id_client']; ?>">Update</a></td>			
 			</tr>
 		<?php } ?>
 		</table>

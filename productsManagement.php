@@ -24,8 +24,7 @@
 				<th>Name</th>
 				<th>Quantity</th>
 				<th>Price</th>
-                <th>Update</th>
-				<th>Details</th>
+                <th colspan='2'>Action</th>
 			</tr>
 			
 		<?php
@@ -43,8 +42,8 @@
 			<td><?php echo $row['name']; ?>d</td>
 			<td><?php echo $row['quantity']; ?>d</td>
 			<td><?php echo $row['price']; ?>d</td>
-            <td><a href="updateProduct.php?update=<?php echo $row['u_id']; ?>">Update</a></td>
-			<td><a href="viewProduct.php?details=<?php echo $row['u_id']; ?>">Details</a></td>
+			<td><a href="viewProduct.php?id_product=<?php echo $row['id_product']; ?>">View</a></td>
+            <td><a href="updateProduct.php?id_product=<?php echo $row['id_product']; ?>">Update</a></td>
 			</tr>
 		<?php } ?>
 		</table>
