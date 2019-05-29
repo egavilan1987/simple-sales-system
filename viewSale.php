@@ -7,10 +7,11 @@
 ?>
 <!DOCTYPE html>
 <html>
-<body>
 	<head>
 		<title>Simple Sale System</title>		
 	</head>  
+<body>
+
 <ul>
   <a href="index.html">Home</a>&nbsp; 
   <a href="newSales.php">New Sales</a>&nbsp;
