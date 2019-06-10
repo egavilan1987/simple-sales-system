@@ -10,44 +10,75 @@
         <a href="salesManagement.php"> Sales Management</a>&nbsp;
         <a href="addClients.php">Add Clients</a>&nbsp; 
         <a href="clientsManagement.php">Clients Management</a>&nbsp; 
-        <a href="addProducts.php">Add Producs</a>&nbsp; 
+        <a href="addProducts.php">Add Products</a>&nbsp; 
         <a href="productsManagement.php">Products Management</a>
 	</ul>
 
-	<form method='post' action='addProducts.php'>
-	<table width='500' border='3' align='center'>
+	<?php
+
+		include('connection.php');
+
+		if(isset($_GET['id_product'])){
+
+		$id_product = $_GET['id_product'];
+
+		$sql = "SELECT * FROM products WHERE id_product = '$id_product'";
+		$query = mysqli_query($conn, $sql)or die("Bad Query: $sql");
+
+		while ($row=mysqli_fetch_assoc($query)){		
+			$id_product = $row['id_product'];
+			$name = $row['name'];
+			$description = $row['description'];
+			$quantity = $row['quantity'];
+			$price = $row['price'];
+			$created_date = $row['created_date'];
+			}
+		}
+	?>
+
+	<table width='500' border='2' align='center'>
 		<tr>
-			<th bgcolor='silver' colspan='5'>Product Information</h>
+			<th bgcolor='silver' colspan='2'>Product Information</th>
 		</tr>
-		<tr >
+		<tr>
+			<td align='right'>ID:</td>
+			<td>
+				<?php echo $id_product; ?>
+			</td>
+		</tr>
+		<tr>
 			<td align='right'>Name:</td>
-			<td><input type='text' name='name' maxlength="50" required >
+			<td>
+				<?php echo $name; ?>
 			</td>
 		</tr>
 		<tr>
 			<td align='right'>Description:</td>
-			<td><input type='text' name='description' maxlength="500" required >
+			<td>
+				<?php echo $description; ?>
 			</td>
 		</tr>
 		<tr>
-			<td align='right'>Quantity :</td>
-			<td><input type='number' name='quantity' min = 0 required>
+			<td align='right'>Available  :</td>
+			<td>
+				<?php echo $quantity; ?>
 			</td>
 		</tr>
 		<tr>
-			<td align='right'>Price: </td>
-			<td><input type='number' name='price' min = 0 step=".01" required >
+			<td align='right'>Price : </td>
+			<td>
+				<?php echo $price; ?>
 			</td>
 		</tr>
 		<tr>
-			<td align='center' colspan='6'>
-			<input type='submit' name='submit' value='Submit'>
+			<td align='right'>Created : </td>
+			<td>
+				<?php echo $created_date; ?>
 			</td>
-		</tr>  
-	  </table>  
-	</form><br>
+		</tr> 
+	</table>
 </body>
-
 </html>
+
 
 

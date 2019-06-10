@@ -16,7 +16,7 @@
   <a href="salesManagement.php"> Sales Management</a>&nbsp; 
   <a href="addClients.php">Add Clients</a>&nbsp; 
   <a href="clientsManagement.php">Clients Management</a>&nbsp; 
-  <a href="addProducts.php">Add Producs</a>&nbsp; 
+  <a href="addProducts.php">Add Products</a>&nbsp; 
   <a href="productsManagement.php">Products Management</a>
 </ul>
 
@@ -56,7 +56,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td align='right'>Quantity :</td>
+			<td align='right'>Quantity:</td>
 			<td><input type='number' name='quantity' min = 1 required>
 			</font>
 			</td>
