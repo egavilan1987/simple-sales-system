@@ -27,3 +27,9 @@ Print PDF clients, products and sales information.
 Files Structure
 
 SQL Script
+-----------------------------------------------------------------
+
+Youtube and blog description
+
+Description
+Web Design and Development Software | PHP, MySQL, jQuery, Ajax, JSON, jQuery, JavaScript, HTML, CSS and Programming Video.
