@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Simple Sale System</title>		
-	</head>  
+
+<head>
+    <title>Simple Sale System</title>
+</head>
+
 <body>
-	<ul>
-        <a href="index.html">Home</a>&nbsp; 
+    <ul>
+        <a href="index.html">Home</a>&nbsp;
         <a href="newSales.php">New Sales</a>&nbsp;
         <a href="salesManagement.php"> Sales Management</a>&nbsp;
-        <a href="addClients.php">Add Clients</a>&nbsp; 
-        <a href="clientsManagement.php">Clients Management</a>&nbsp; 
-        <a href="addProducts.php">Add Products</a>&nbsp; 
+        <a href="addClients.php">Add Clients</a>&nbsp;
+        <a href="clientsManagement.php">Clients Management</a>&nbsp;
+        <a href="addProducts.php">Add Products</a>&nbsp;
         <a href="productsManagement.php">Products Management</a>
-	</ul>
+    </ul>
 
-	<?php
+    <?php
 
 		include('connection.php');
 
@@ -36,49 +38,47 @@
 		}
 	?>
 
-	<table width='500' border='2' align='center'>
-		<tr>
-			<th bgcolor='silver' colspan='2'>Product Information</th>
-		</tr>
-		<tr>
-			<td align='right'>ID:</td>
-			<td>
-				<?php echo $id_product; ?>
-			</td>
-		</tr>
-		<tr>
-			<td align='right'>Name:</td>
-			<td>
-				<?php echo $name; ?>
-			</td>
-		</tr>
-		<tr>
-			<td align='right'>Description:</td>
-			<td>
-				<?php echo $description; ?>
-			</td>
-		</tr>
-		<tr>
-			<td align='right'>Available  :</td>
-			<td>
-				<?php echo $quantity; ?>
-			</td>
-		</tr>
-		<tr>
-			<td align='right'>Price : </td>
-			<td>
-				<?php echo $price; ?>
-			</td>
-		</tr>
-		<tr>
-			<td align='right'>Created : </td>
-			<td>
-				<?php echo $created_date; ?>
-			</td>
-		</tr> 
-	</table>
+        <table width='500' border='2' align='center'>
+            <tr>
+                <th bgcolor='silver' colspan='2'>Product Information</th>
+            </tr>
+            <tr>
+                <td align='right'>ID:</td>
+                <td>
+                    <?php echo $id_product; ?>
+                </td>
+            </tr>
+            <tr>
+                <td align='right'>Name:</td>
+                <td>
+                    <?php echo $name; ?>
+                </td>
+            </tr>
+            <tr>
+                <td align='right'>Description:</td>
+                <td>
+                    <?php echo $description; ?>
+                </td>
+            </tr>
+            <tr>
+                <td align='right'>Available :</td>
+                <td>
+                    <?php echo $quantity; ?>
+                </td>
+            </tr>
+            <tr>
+                <td align='right'>Price : </td>
+                <td>
+                    <?php echo $price; ?>
+                </td>
+            </tr>
+            <tr>
+                <td align='right'>Created : </td>
+                <td>
+                    <?php echo $created_date; ?>
+                </td>
+            </tr>
+        </table>
 </body>
+
 </html>
-
-
-

@@ -31,4 +31,3 @@ CREATE TABLE sales(
 	created_date DATETIME NOT NULL,
 	PRIMARY KEY(id_sale)
 );
-

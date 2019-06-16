@@ -1,4 +1,4 @@
-	<?php
+<?php
 
 		include('connection.php');
 
@@ -15,64 +15,66 @@
 			$telephone = $row['telephone'];
 			}
 	?>
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Simple Sale System</title>		
-	</head>  
-<body>
+    <!DOCTYPE html>
+    <html>
 
-	<ul>
-	  <a href="index.html">Home</a>&nbsp; 
-	  <a href="newSales.php">New Sales</a>&nbsp;
-	  <a href="salesManagement.php"> Sales Management</a>&nbsp;
-	  <a href="addClients.php">Add Clients</a>&nbsp; 
-	  <a href="clientsManagement.php">Clients Management</a>&nbsp; 
-	  <a href="addProducts.php">Add Products</a>&nbsp; 
-	  <a href="productsManagement.php">Products Management</a>
-	</ul>
+    <head>
+        <title>Simple Sale System</title>
+    </head>
 
-	<form method='POST' action='updateClient.php?id=<?php echo $id_client; ?>'>
-		<table width='500' border='3' align='center'>
-			<tr>
-				<th bgcolor='silver' colspan='5'>Update Client Information</th>
-			</tr>
-			<tr>
-				<td align='right'>Name:</td>
-				<td>
-					<input type='text' name='name' value='<?php echo $name; ?>' maxlength="50" required>
-				</td>
-			</tr>
-			<tr>
-				<td align='right'>Address:</td>
-				<td>
-					<input type='text' name='address' value='<?php echo $address; ?>' maxlength="500" required>
-				</td>
-			</tr>
-			<tr>
-				<td align='right'>Email  :</td>
-				<td>
-					<input type='email' name='email' value='<?php echo $email; ?>' name='email' required>
-				</td>
-			</tr>
-			<tr>
-				<td align='right'>Telephone : </td>
-				<td>
-					<input type='tel' name='telephone' value='<?php echo $telephone; ?>' maxlength="20" required>
-				</td>
-			</tr>
-			<tr>
-				<td align='center' colspan='6'>
-					<input type='submit' name='submit' value='Submit'>
-				</td>
-			</tr>  
-		  </table>  
-	</form>
-</body>
+    <body>
 
-</html>
+        <ul>
+            <a href="index.html">Home</a>&nbsp;
+            <a href="newSales.php">New Sales</a>&nbsp;
+            <a href="salesManagement.php"> Sales Management</a>&nbsp;
+            <a href="addClients.php">Add Clients</a>&nbsp;
+            <a href="clientsManagement.php">Clients Management</a>&nbsp;
+            <a href="addProducts.php">Add Products</a>&nbsp;
+            <a href="productsManagement.php">Products Management</a>
+        </ul>
 
-	<?php
+        <form method='POST' action='updateClient.php?id=<?php echo $id_client; ?>'>
+            <table width='500' border='3' align='center'>
+                <tr>
+                    <th bgcolor='silver' colspan='5'>Update Client Information</th>
+                </tr>
+                <tr>
+                    <td align='right'>Name:</td>
+                    <td>
+                        <input type='text' name='name' value='<?php echo $name; ?>' maxlength="50" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td align='right'>Address:</td>
+                    <td>
+                        <input type='text' name='address' value='<?php echo $address; ?>' maxlength="500" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td align='right'>Email :</td>
+                    <td>
+                        <input type='email' name='email' value='<?php echo $email; ?>' name='email' required>
+                    </td>
+                </tr>
+                <tr>
+                    <td align='right'>Telephone : </td>
+                    <td>
+                        <input type='tel' name='telephone' value='<?php echo $telephone; ?>' maxlength="20" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td align='center' colspan='6'>
+                        <input type='submit' name='submit' value='Submit'>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+
+    </html>
+
+    <?php
 
 		if(isset($_POST['submit']))
 		{ 
@@ -81,10 +83,8 @@
 			$address = $_POST['address'];
 			$email = $_POST['email'];
 			$telephone = $_POST['telephone'];
-		     
 
 		$sql2 = "UPDATE clients SET name='$name', address='$address', email='$email', telephone='$telephone' WHERE id_client = '$id'";
-
 
 		$query2=mysqli_query($conn,$sql2);
 
